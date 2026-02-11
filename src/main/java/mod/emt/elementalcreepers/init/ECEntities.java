@@ -1,7 +1,9 @@
 package mod.emt.elementalcreepers.init;
 
 import mod.emt.elementalcreepers.ElementalCreepersRedux;
+import mod.emt.elementalcreepers.client.render.ECRenderCookieCreeper;
 import mod.emt.elementalcreepers.client.render.ECRenderFireCreeper;
+import mod.emt.elementalcreepers.entity.ECEntityCookieCreeper;
 import mod.emt.elementalcreepers.entity.ECEntityFireCreeper;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +35,7 @@ public class ECEntities {
     public static void onEntityRegistry(RegistryEvent.Register<EntityEntry> event) {
         ElementalCreepersRedux.LOGGER.info("Registering entities...");
 
+        registerEntity("cookie_creeper", ECEntityCookieCreeper.class, 2829099, 14079702);
         registerEntity("fire_creeper", ECEntityFireCreeper.class, 2829099, 14079702);
     }
 
@@ -41,6 +44,7 @@ public class ECEntities {
     public static void registerEntityRenderers(@Nonnull final ModelRegistryEvent event) {
         ElementalCreepersRedux.LOGGER.info("Registering entity renderers...");
 
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityCookieCreeper.class, new ECRenderCookieCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityFireCreeper.class, new ECRenderFireCreeper.Factory());
     }
 }

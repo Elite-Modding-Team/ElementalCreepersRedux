@@ -126,8 +126,8 @@ public class ECEntityElementalCreeper extends EntityCreeper {
         double y = this.posY;
         double z = this.posZ;
 
-        if (this.world.isRemote) {
-            this.world.playSound(x, y, z, soundEvent, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F, false);
+        if (!this.world.isRemote) {
+            this.world.playSound(null, x, y, z, soundEvent, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
         }
 
         if (!this.world.isRemote && this.world instanceof WorldServer) {
@@ -136,8 +136,7 @@ public class ECEntityElementalCreeper extends EntityCreeper {
 
             for (EntityPlayerMP player : worldServer.getPlayers(EntityPlayerMP.class, p -> p.getDistanceSq(x, y, z) < 4096.0D)) {
                 if (hitPlayers != null && hitPlayers.containsKey(player)) {
-                    Vec3d motion = hitPlayers.get(player);
-                    SPacketExplosion playerPacket = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<BlockPos>(), motion);
+                    SPacketExplosion playerPacket = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<BlockPos>(), hitPlayers.get(player));
                     player.connection.sendPacket(playerPacket);
                 } else {
                     player.connection.sendPacket(packet);

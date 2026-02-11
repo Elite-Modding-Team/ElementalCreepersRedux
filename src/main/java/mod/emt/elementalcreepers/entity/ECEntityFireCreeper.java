@@ -34,6 +34,7 @@ public class ECEntityFireCreeper extends ECEntityElementalCreeper {
     @Override
     public void creeperEffect() {
         double radius = 6.0;
+
         if (this.getPowered()) {
             radius *= 1.5;
         }
