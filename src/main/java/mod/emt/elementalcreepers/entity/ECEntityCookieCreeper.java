@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 public class ECEntityCookieCreeper extends ECEntityElementalCreeper {
     public ECEntityCookieCreeper(World world) {
         super(world);
-        this.isImmuneToFire = true;
     }
 
     @Override

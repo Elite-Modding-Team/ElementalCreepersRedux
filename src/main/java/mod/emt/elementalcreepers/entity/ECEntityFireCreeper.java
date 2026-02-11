@@ -62,6 +62,6 @@ public class ECEntityFireCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_FIRE_AMBIENT);
+        handleNetworkedExplosionEffects(radius, SoundEvents.ITEM_FIRECHARGE_USE);
     }
 }
