@@ -38,6 +38,7 @@ public class ECEntities {
         registerEntity("fire_creeper", ECEntityFireCreeper.class, 2829099, 14079702);
         registerEntity("light_creeper", ECEntityLightCreeper.class, 2829099, 14079702);
         registerEntity("magma_creeper", ECEntityMagmaCreeper.class, 2829099, 14079702);
+        registerEntity("reverse_creeper", ECEntityReverseCreeper.class, 2829099, 14079702);
         registerEntity("water_creeper", ECEntityWaterCreeper.class, 2829099, 14079702);
         registerEntity("winter_creeper", ECEntityWinterCreeper.class, 2829099, 14079702);
     }
@@ -52,6 +53,7 @@ public class ECEntities {
         RenderingRegistry.registerEntityRenderingHandler(ECEntityFireCreeper.class, new ECRenderFireCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityLightCreeper.class, new ECRenderLightCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityMagmaCreeper.class, new ECRenderMagmaCreeper.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityReverseCreeper.class, new ECRenderReverseCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityWaterCreeper.class, new ECRenderWaterCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityWinterCreeper.class, new ECRenderWinterCreeper.Factory());
     }
