@@ -2,6 +2,7 @@ itemGroup.ElementalCreepersReduxTab=Elemental Creepers Redux
 
 entity.elementalcreepers.cookie_creeper.name=Cookie Creeper
 entity.elementalcreepers.earth_creeper.name=Earth Creeper
+entity.elementalcreepers.electric_creeper.name=Electric Creeper
 entity.elementalcreepers.fire_creeper.name=Fire Creeper
 entity.elementalcreepers.light_creeper.name=Light Creeper
 entity.elementalcreepers.magma_creeper.name=Magma Creeper
