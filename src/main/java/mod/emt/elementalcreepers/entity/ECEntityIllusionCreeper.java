@@ -89,7 +89,7 @@ public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
 
     @Override
     public void creeperEffect() {
-        // Disappear instead of explode when fake
+        // Disappear instead of exploding when fake
         if (this.isFake()) {
             this.spawnExplosionParticle();
             this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
