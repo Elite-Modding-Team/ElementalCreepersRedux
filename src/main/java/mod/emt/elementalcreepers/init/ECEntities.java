@@ -34,6 +34,7 @@ public class ECEntities {
         ElementalCreepersRedux.LOGGER.info("Registering entities...");
 
         registerEntity("cookie_creeper", ECEntityCookieCreeper.class, 2829099, 14079702);
+        registerEntity("dark_creeper", ECEntityDarkCreeper.class, 2829099, 14079702);
         registerEntity("earth_creeper", ECEntityEarthCreeper.class, 2829099, 14079702);
         registerEntity("electric_creeper", ECEntityElectricCreeper.class, 2829099, 14079702);
         registerEntity("fire_creeper", ECEntityFireCreeper.class, 2829099, 14079702);
@@ -53,6 +54,7 @@ public class ECEntities {
         ElementalCreepersRedux.LOGGER.info("Registering entity renderers...");
 
         RenderingRegistry.registerEntityRenderingHandler(ECEntityCookieCreeper.class, new ECRenderCookieCreeper.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityDarkCreeper.class, new ECRenderDarkCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityEarthCreeper.class, new ECRenderEarthCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityElectricCreeper.class, new ECRenderElectricCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityFireCreeper.class, new ECRenderFireCreeper.Factory());

@@ -2,13 +2,16 @@ itemGroup.ElementalCreepersReduxTab=Elemental Creepers Redux
 
 entity.elementalcreepers.cookie_creeper.name=Cookie Creeper
 entity.elementalcreepers.earth_creeper.name=Earth Creeper
+entity.elementalcreepers.dark_creeper.name=Dark Creeper
 entity.elementalcreepers.electric_creeper.name=Electric Creeper
 entity.elementalcreepers.fire_creeper.name=Fire Creeper
+entity.elementalcreepers.friendly_creeper.name=Friendly Creeper
 entity.elementalcreepers.ghost_creeper.name=Ghost Creeper
 entity.elementalcreepers.illusion_creeper.name=Illusion Creeper
 entity.elementalcreepers.light_creeper.name=Light Creeper
 entity.elementalcreepers.magma_creeper.name=Magma Creeper
 entity.elementalcreepers.psychic_creeper.name=Psychic Creeper
 entity.elementalcreepers.reverse_creeper.name=Reverse Creeper
+entity.elementalcreepers.spider_creeper.name=Spider Creeper
 entity.elementalcreepers.water_creeper.name=Water Creeper
 entity.elementalcreepers.winter_creeper.name=Winter Creeper
