@@ -1,14 +1,8 @@
 package mod.emt.elementalcreepers.init;
 
 import mod.emt.elementalcreepers.ElementalCreepersRedux;
-import mod.emt.elementalcreepers.client.render.ECRenderCookieCreeper;
-import mod.emt.elementalcreepers.client.render.ECRenderEarthCreeper;
-import mod.emt.elementalcreepers.client.render.ECRenderFireCreeper;
-import mod.emt.elementalcreepers.client.render.ECRenderWaterCreeper;
-import mod.emt.elementalcreepers.entity.ECEntityCookieCreeper;
-import mod.emt.elementalcreepers.entity.ECEntityEarthCreeper;
-import mod.emt.elementalcreepers.entity.ECEntityFireCreeper;
-import mod.emt.elementalcreepers.entity.ECEntityWaterCreeper;
+import mod.emt.elementalcreepers.client.render.*;
+import mod.emt.elementalcreepers.entity.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -42,7 +36,10 @@ public class ECEntities {
         registerEntity("cookie_creeper", ECEntityCookieCreeper.class, 2829099, 14079702);
         registerEntity("earth_creeper", ECEntityEarthCreeper.class, 2829099, 14079702);
         registerEntity("fire_creeper", ECEntityFireCreeper.class, 2829099, 14079702);
+        registerEntity("light_creeper", ECEntityLightCreeper.class, 2829099, 14079702);
+        registerEntity("magma_creeper", ECEntityMagmaCreeper.class, 2829099, 14079702);
         registerEntity("water_creeper", ECEntityWaterCreeper.class, 2829099, 14079702);
+        registerEntity("winter_creeper", ECEntityWinterCreeper.class, 2829099, 14079702);
     }
 
     @SideOnly(Side.CLIENT)
@@ -53,6 +50,9 @@ public class ECEntities {
         RenderingRegistry.registerEntityRenderingHandler(ECEntityCookieCreeper.class, new ECRenderCookieCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityEarthCreeper.class, new ECRenderEarthCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityFireCreeper.class, new ECRenderFireCreeper.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityLightCreeper.class, new ECRenderLightCreeper.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityMagmaCreeper.class, new ECRenderMagmaCreeper.Factory());
         RenderingRegistry.registerEntityRenderingHandler(ECEntityWaterCreeper.class, new ECRenderWaterCreeper.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityWinterCreeper.class, new ECRenderWinterCreeper.Factory());
     }
 }

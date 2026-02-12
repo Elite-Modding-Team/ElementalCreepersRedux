@@ -9,7 +9,6 @@ import net.minecraft.world.World;
 public class ECEntityEarthCreeper extends ECEntityElementalCreeper {
     public ECEntityEarthCreeper(World world) {
         super(world);
-        this.isImmuneToFire = true;
     }
 
     @Override
