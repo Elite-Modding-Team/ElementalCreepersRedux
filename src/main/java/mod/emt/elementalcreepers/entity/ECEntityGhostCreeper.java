@@ -24,15 +24,8 @@ public class ECEntityGhostCreeper extends ECEntityElementalCreeper {
             radius *= 1.5;
         }
 
-        Map<EntityPlayer, Vec3d> hitPlayers = EntityOnlyExplosion.explodeAt(
-                this.world,
-                this,
-                this.posX,
-                this.posY,
-                this.posZ,
-                radius,
-                3.0,
-                1.0D
+        Map<EntityPlayer, Vec3d> hitPlayers = EntityOnlyExplosion.explodeAt(this.world, this, this.posX, this.posY, this.posZ,
+                radius, 3.0, 1.0D
         );
 
         /*if (!this.world.isRemote && this.world instanceof WorldServer) {

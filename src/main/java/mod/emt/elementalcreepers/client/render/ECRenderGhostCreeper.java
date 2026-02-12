@@ -3,6 +3,7 @@ package mod.emt.elementalcreepers.client.render;
 import mod.emt.elementalcreepers.ElementalCreepersRedux;
 import mod.emt.elementalcreepers.entity.ECEntityGhostCreeper;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderCreeper;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -27,6 +28,9 @@ public class ECRenderGhostCreeper extends RenderCreeper {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 0.5F);
+        GlStateManager.disableLighting();
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
+        GlStateManager.enableLighting();
     }
 
     /*@Override
