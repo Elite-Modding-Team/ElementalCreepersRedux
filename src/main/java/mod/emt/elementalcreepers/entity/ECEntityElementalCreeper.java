@@ -130,6 +130,7 @@ public class ECEntityElementalCreeper extends EntityCreeper {
             this.world.playSound(null, x, y, z, soundEvent, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
         }
 
+
         if (!this.world.isRemote && this.world instanceof WorldServer) {
             WorldServer worldServer = (WorldServer) this.world;
             SPacketExplosion packet = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<BlockPos>(), null);
