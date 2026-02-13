@@ -14,6 +14,7 @@ import java.util.Map;
 public class ECEntityGhostCreeper extends ECEntityElementalCreeper {
     public ECEntityGhostCreeper(World world) {
         super(world);
+        this.isImmuneToFire = true;
     }
 
     @Override

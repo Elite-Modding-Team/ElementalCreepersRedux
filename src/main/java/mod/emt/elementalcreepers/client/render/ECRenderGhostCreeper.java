@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.RenderCreeper;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -25,9 +26,26 @@ public class ECRenderGhostCreeper extends RenderCreeper {
     protected void preRenderCallback(EntityCreeper entity, float partialTickTime) {
         super.preRenderCallback(entity, partialTickTime);
 
+        // Spawn animation and pulse effect
+        float spawnTime = (entity.ticksExisted + partialTickTime) / 15.0F;
+        float fadeTime = MathHelper.clamp(MathHelper.sqrt(spawnTime), 0.0F, 1.0F);
+        float pulseTime = (entity.ticksExisted + partialTickTime) * 0.05F;
+        float pulse = (MathHelper.sin(pulseTime) + 1.0F) / 2.0F;
+        float alpha = (0.2F + (pulse * 0.4F)) * fadeTime;
+        float r = 0.6F + (pulse * 0.3F);
+        float g = 0.7F + (pulse * 0.25F);
+        float b = 0.8F + (pulse * 0.2F);
+
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.5F);
+
+        if (fadeTime < 1.0F) {
+            float glow = (1.0F - fadeTime) * 0.5F;
+            GlStateManager.color(r + glow, g + glow, b + glow, alpha);
+        } else {
+            GlStateManager.color(r, g, b, alpha);
+        }
+
         GlStateManager.disableLighting();
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
         GlStateManager.enableLighting();
