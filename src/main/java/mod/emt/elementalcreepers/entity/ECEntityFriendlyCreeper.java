@@ -1,6 +1,7 @@
 package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.entity.ai.EntityAIFriendlyCreeperSwell;
+import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.entity.*;
@@ -22,10 +23,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -466,5 +464,11 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     @Override
     public boolean canBeLeashedTo(EntityPlayer player) {
         return !this.isAngry() && super.canBeLeashedTo(player);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.FRIENDLY_CREEPER;
     }
 }

@@ -1,14 +1,17 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
 public class ECEntityGhostCreeper extends ECEntityElementalCreeper {
@@ -36,5 +39,11 @@ public class ECEntityGhostCreeper extends ECEntityElementalCreeper {
 
         this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, SoundCategory.HOSTILE, 2.0F, (2.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
         handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_GENERIC_EXPLODE);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.GHOST_CREEPER;
     }
 }

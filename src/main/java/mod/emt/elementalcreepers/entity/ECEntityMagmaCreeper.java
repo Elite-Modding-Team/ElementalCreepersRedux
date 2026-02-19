@@ -1,11 +1,15 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ECEntityMagmaCreeper extends ECEntityElementalCreeper {
     public ECEntityMagmaCreeper(World world) {
@@ -40,5 +44,11 @@ public class ECEntityMagmaCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.ITEM_BUCKET_EMPTY_LAVA);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.MAGMA_CREEPER;
     }
 }

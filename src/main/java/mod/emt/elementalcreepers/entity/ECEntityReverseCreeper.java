@@ -1,9 +1,13 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ECEntityReverseCreeper extends ECEntityElementalCreeper {
     public ECEntityReverseCreeper(World world) {
@@ -57,5 +61,11 @@ public class ECEntityReverseCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_PISTON_EXTEND);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.REVERSE_CREEPER;
     }
 }

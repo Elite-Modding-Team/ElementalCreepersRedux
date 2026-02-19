@@ -1,10 +1,14 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ECEntityFireCreeper extends ECEntityElementalCreeper {
     public ECEntityFireCreeper(World world) {
@@ -44,5 +48,11 @@ public class ECEntityFireCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.ITEM_FIRECHARGE_USE);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.FIRE_CREEPER;
     }
 }

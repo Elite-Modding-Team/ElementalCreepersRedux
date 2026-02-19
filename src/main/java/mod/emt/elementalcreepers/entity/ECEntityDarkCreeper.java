@@ -1,17 +1,20 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
@@ -64,5 +67,11 @@ public class ECEntityDarkCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.DARK_CREEPER;
     }
 }

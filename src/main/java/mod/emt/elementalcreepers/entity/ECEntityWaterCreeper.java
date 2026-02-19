@@ -1,11 +1,15 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ECEntityWaterCreeper extends ECEntityElementalCreeper {
     public ECEntityWaterCreeper(World world) {
@@ -52,5 +56,11 @@ public class ECEntityWaterCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_HOSTILE_SPLASH);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.WATER_CREEPER;
     }
 }

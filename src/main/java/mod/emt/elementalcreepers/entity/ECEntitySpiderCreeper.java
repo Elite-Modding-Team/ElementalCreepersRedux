@@ -1,5 +1,6 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -11,11 +12,13 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateClimber;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
@@ -144,5 +147,11 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
         return SoundEvents.ENTITY_SPIDER_HURT;
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.SPIDER_CREEPER;
     }
 }

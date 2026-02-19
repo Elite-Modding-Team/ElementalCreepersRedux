@@ -1,11 +1,14 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
@@ -37,5 +40,11 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
 
 
         handleNetworkedExplosionEffects(radius, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.ELECTRIC_CREEPER;
     }
 }

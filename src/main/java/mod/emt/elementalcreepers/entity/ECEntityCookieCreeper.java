@@ -1,10 +1,14 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ECEntityCookieCreeper extends ECEntityElementalCreeper {
     public ECEntityCookieCreeper(World world) {
@@ -35,5 +39,11 @@ public class ECEntityCookieCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(5.0D, SoundEvents.ENTITY_GENERIC_EAT);
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return ECLootTables.COOKIE_CREEPER;
     }
 }

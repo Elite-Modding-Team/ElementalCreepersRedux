@@ -1,5 +1,6 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -105,6 +106,6 @@ public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return this.isFake() ? null : super.getLootTable();
+        return this.isFake() ? null : ECLootTables.ILLUSION_CREEPER;
     }
 }
