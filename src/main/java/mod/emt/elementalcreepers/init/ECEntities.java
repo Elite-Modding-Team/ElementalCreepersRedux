@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import java.awt.*;
 
 @Mod.EventBusSubscriber(modid = ElementalCreepersRedux.MOD_ID)
 public class ECEntities {
@@ -33,21 +34,21 @@ public class ECEntities {
     public static void onEntityRegistry(RegistryEvent.Register<EntityEntry> event) {
         ElementalCreepersRedux.LOGGER.info("Registering entities...");
 
-        registerEntity("cookie_creeper", ECEntityCookieCreeper.class, 2829099, 14079702);
-        registerEntity("dark_creeper", ECEntityDarkCreeper.class, 2829099, 14079702);
-        registerEntity("earth_creeper", ECEntityEarthCreeper.class, 2829099, 14079702);
-        registerEntity("electric_creeper", ECEntityElectricCreeper.class, 2829099, 14079702);
-        registerEntity("fire_creeper", ECEntityFireCreeper.class, 2829099, 14079702);
-        registerEntity("friendly_creeper", ECEntityFriendlyCreeper.class, 2829099, 14079702);
-        registerEntity("ghost_creeper", ECEntityGhostCreeper.class, 2829099, 14079702);
-        registerEntity("illusion_creeper", ECEntityIllusionCreeper.class, 2829099, 14079702);
-        registerEntity("light_creeper", ECEntityLightCreeper.class, 2829099, 14079702);
-        registerEntity("magma_creeper", ECEntityMagmaCreeper.class, 2829099, 14079702);
-        registerEntity("psychic_creeper", ECEntityPsychicCreeper.class, 2829099, 14079702);
-        registerEntity("reverse_creeper", ECEntityReverseCreeper.class, 2829099, 14079702);
-        registerEntity("spider_creeper", ECEntitySpiderCreeper.class, 2829099, 14079702);
-        registerEntity("water_creeper", ECEntityWaterCreeper.class, 2829099, 14079702);
-        registerEntity("winter_creeper", ECEntityWinterCreeper.class, 2829099, 14079702);
+        registerEntity("cookie_creeper", ECEntityCookieCreeper.class, 13011540, 8342837);
+        registerEntity("dark_creeper", ECEntityDarkCreeper.class, 3421236, Color.WHITE.getRGB());
+        registerEntity("earth_creeper", ECEntityEarthCreeper.class, 7224073, 7396445);
+        registerEntity("electric_creeper", ECEntityElectricCreeper.class, 16772666, Color.BLACK.getRGB());
+        registerEntity("fire_creeper", ECEntityFireCreeper.class, 16740369, Color.BLACK.getRGB());
+        registerEntity("friendly_creeper", ECEntityFriendlyCreeper.class, 14183121, Color.BLACK.getRGB());
+        registerEntity("ghost_creeper", ECEntityGhostCreeper.class, 7644532, 1118481);
+        registerEntity("illusion_creeper", ECEntityIllusionCreeper.class, 12303291, 7434609);
+        registerEntity("light_creeper", ECEntityLightCreeper.class, 16774535, 9800765);
+        registerEntity("magma_creeper", ECEntityMagmaCreeper.class, 12006990, Color.BLACK.getRGB());
+        registerEntity("psychic_creeper", ECEntityPsychicCreeper.class, 10180028, Color.BLACK.getRGB());
+        registerEntity("reverse_creeper", ECEntityReverseCreeper.class, Color.BLACK.getRGB(), 894731);
+        registerEntity("spider_creeper", ECEntitySpiderCreeper.class, 2493707, 11013646);
+        registerEntity("water_creeper", ECEntityWaterCreeper.class, 5603516, Color.BLACK.getRGB());
+        registerEntity("winter_creeper", ECEntityWinterCreeper.class, 13816530, Color.BLACK.getRGB());
     }
 
     @SideOnly(Side.CLIENT)
