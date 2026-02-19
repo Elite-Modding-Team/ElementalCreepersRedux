@@ -12,6 +12,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
+
 public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
     private static final DataParameter<Boolean> IS_FAKE = EntityDataManager.createKey(ECEntityIllusionCreeper.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> IS_SPLIT = EntityDataManager.createKey(ECEntityIllusionCreeper.class, DataSerializers.BOOLEAN);
@@ -104,6 +106,7 @@ public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
         this.spawnLingeringCloud();
     }
 
+    @Nullable
     @Override
     protected ResourceLocation getLootTable() {
         return this.isFake() ? null : ECLootTables.ILLUSION_CREEPER;

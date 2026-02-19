@@ -27,6 +27,56 @@
           ]
         }
       ]
+    },
+    {
+      "name": "main2",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "entryName": "glowstone_dust",
+          "name": "minecraft:glowstone_dust",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            },
+            {
+              "function": "looting_enchant",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "condition": "killed_by_player"
+        },
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.05,
+          "looting_multiplier": 0.02
+        }
+      ],
+      "name": "rare",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "entryName": "glowstone",
+          "name": "minecraft:glowstone",
+          "weight": 1
+        }
+      ]
     }
   ]
 }
