@@ -1,6 +1,7 @@
 package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.entity.ai.EntityAIFriendlyCreeperSwell;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
@@ -231,7 +232,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
                     (float) radius, 0.8D, 1.0D
             );
 
-            this.handleNetworkedExplosionEffects(radius, hitPlayers, SoundEvents.ENTITY_GENERIC_EXPLODE);
+            this.handleNetworkedExplosionEffects(radius, hitPlayers, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());
         }
     }
 

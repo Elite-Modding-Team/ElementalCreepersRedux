@@ -1,8 +1,8 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -36,6 +36,6 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
         }
 
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_LIGHTNING_THUNDER);
+        handleNetworkedExplosionEffects(radius, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());
     }
 }
