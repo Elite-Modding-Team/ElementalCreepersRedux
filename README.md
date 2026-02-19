@@ -16,6 +16,7 @@ The recognizable cast of creepers since the original Elemental Creepers mod!
 - **Electric Creeper:** It will conduct lightning on all mobs around it when it explodes. Watch out if there's other creepers nearby!
 - **Fire Creeper:** Hates forests, and spreads fire everywhere after exploding. 
 - **Friendly Creeper:** Likes to be left alone rather than engage in conflict like the rest of its brethren, it also has the ability to explode without dying or destroying terrain. You can tame these creepers using gunpowder to befriend them! Right-click on tamed Friendly Creepers with an empty hand to make them sit.
+- **Ghost Creeper:** Vengeful and back from the dead. These spirits don't destroy terrain from their explosions but will still a large amount of damage.
 - **Illusion Creeper:** Sneaky, and splits up to five. Which one of them is real?
 - **Light Creeper:** This creeper is obsessed with glowstone and explodes into a pile of it! Be sure not to let it trap you if you want to collect all that glowstone.
 - **Magma Creeper:** The Fire Creeper's more evil cousin. Just make sure you have something to protect you from its lava explosion. 
