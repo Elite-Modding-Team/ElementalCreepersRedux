@@ -1,8 +1,10 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -17,8 +19,16 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.ELECTRIC_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.ELECTRIC_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.ELECTRIC_CREEPER.movementSpeed);
+    }
+
+    @Override
     public void creeperEffect() {
-        double radius = 8.0;
+        double radius = ECConfig.ENTITIES.ELECTRIC_CREEPER.explosionRadius;
 
         if (this.getPowered()) {
             radius *= 1.5;

@@ -1,6 +1,8 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -16,8 +18,16 @@ public class ECEntityCookieCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.COOKIE_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.COOKIE_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.COOKIE_CREEPER.movementSpeed);
+    }
+
+    @Override
     protected void creeperEffect() {
-        int amount = 5;
+        int amount = ECConfig.ENTITIES.COOKIE_CREEPER.cookieQuantity;
 
         if (this.getPowered()) {
             amount = (int) (amount * 1.5);

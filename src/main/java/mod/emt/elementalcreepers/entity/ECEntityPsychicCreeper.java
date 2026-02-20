@@ -1,7 +1,9 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
@@ -18,8 +20,16 @@ public class ECEntityPsychicCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.PSYCHIC_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.PSYCHIC_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.PSYCHIC_CREEPER.movementSpeed);
+    }
+
+    @Override
     public void creeperEffect() {
-        double radius = 3.0;
+        double radius = ECConfig.ENTITIES.PSYCHIC_CREEPER.explosionRadius;
 
         if (this.getPowered()) {
             radius *= 1.5;
@@ -35,7 +45,7 @@ public class ECEntityPsychicCreeper extends ECEntityElementalCreeper {
             double dist = MathHelper.sqrt(dX * dX + dY * dY + dZ * dZ);
 
             if (dist > 0) {
-                double strength = 5.0;
+                double strength = ECConfig.ENTITIES.PSYCHIC_CREEPER.explosionKnockbackStrength;
                 double pushX = (dX / dist) * strength;
                 double pushY = 0.5D * strength;
                 double pushZ = (dZ / dist) * strength;

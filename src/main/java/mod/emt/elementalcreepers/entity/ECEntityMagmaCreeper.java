@@ -1,8 +1,10 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
@@ -18,9 +20,17 @@ public class ECEntityMagmaCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.MAGMA_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.MAGMA_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.MAGMA_CREEPER.movementSpeed);
+    }
+
+    @Override
     public void creeperEffect() {
         IBlockState flowingState = Blocks.FLOWING_LAVA.getDefaultState().withProperty(BlockLiquid.LEVEL, 4);
-        double radius = 5.0;
+        double radius = ECConfig.ENTITIES.MAGMA_CREEPER.explosionRadius;
 
         if (this.getPowered()) {
             radius *= 1.5;

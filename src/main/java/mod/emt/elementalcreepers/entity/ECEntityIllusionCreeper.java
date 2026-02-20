@@ -1,6 +1,8 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -20,6 +22,14 @@ public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
 
     public ECEntityIllusionCreeper(World world) {
         super(world);
+    }
+
+    @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.ILLUSION_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.ILLUSION_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.ILLUSION_CREEPER.movementSpeed);
     }
 
     @Override
@@ -101,7 +111,7 @@ public class ECEntityIllusionCreeper extends ECEntityElementalCreeper {
 
         float f = this.getPowered() ? 1.5F : 1.0F;
         boolean mobGriefing = this.world.getGameRules().getBoolean("mobGriefing");
-        this.world.createExplosion(this, this.posX, this.posY, this.posZ, 3.0F * f, mobGriefing);
+        this.world.createExplosion(this, this.posX, this.posY, this.posZ, (float) ECConfig.ENTITIES.ILLUSION_CREEPER.explosionRadius * f, mobGriefing);
 
         this.spawnLingeringCloud();
     }

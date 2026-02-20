@@ -1,9 +1,11 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -24,8 +26,16 @@ public class ECEntityDarkCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.DARK_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.DARK_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.DARK_CREEPER.movementSpeed);
+    }
+
+    @Override
     public void creeperEffect() {
-        double radius = 12.0;
+        double radius = ECConfig.ENTITIES.DARK_CREEPER.explosionRadius;
 
         if (this.getPowered()) {
             radius *= 1.5;

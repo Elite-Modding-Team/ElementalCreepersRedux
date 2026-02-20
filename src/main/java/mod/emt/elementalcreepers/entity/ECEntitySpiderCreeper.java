@@ -1,7 +1,9 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -29,6 +31,14 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
     }
 
     @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.SPIDER_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.SPIDER_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.SPIDER_CREEPER.movementSpeed);
+    }
+
+    @Override
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(CLIMBING, (byte) 0);
@@ -36,7 +46,7 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
 
     @Override
     public void creeperEffect() {
-        double radius = 7.0;
+        double radius = ECConfig.ENTITIES.SPIDER_CREEPER.explosionRadius;
 
         if (this.getPowered()) {
             radius *= 1.5;
@@ -61,7 +71,7 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
         List<EntityLivingBase> entities = world.getEntitiesWithinAABB(EntityLivingBase.class,
                 this.getEntityBoundingBox().grow(radius));
 
-        double poisonTime = 10.0;
+        double poisonTime = ECConfig.ENTITIES.SPIDER_CREEPER.poisonTime;
         switch (world.getDifficulty()) {
             case EASY:
                 poisonTime *= 0.66D;
@@ -70,7 +80,7 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
                 poisonTime *= 1.5D;
                 break;
             case PEACEFUL:
-                poisonTime = 0;
+                poisonTime = 0.0D;
                 break;
             default:
                 break;

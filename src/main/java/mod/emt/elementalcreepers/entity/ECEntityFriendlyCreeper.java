@@ -1,5 +1,6 @@
 package mod.emt.elementalcreepers.entity;
 
+import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.entity.ai.EntityAIFriendlyCreeperSwell;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
@@ -46,7 +47,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     private int fuseTime = 30;
     private int cooldown;
     private int maxCooldown = 80;
-    private int explosionRadius = 3;
+    private double explosionRadius = ECConfig.ENTITIES.FRIENDLY_CREEPER.explosionRadius;
     private UUID persistentAngerTarget;
 
     public ECEntityFriendlyCreeper(World world) {
@@ -79,8 +80,9 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.armor);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.movementSpeed);
     }
 
     @Override
