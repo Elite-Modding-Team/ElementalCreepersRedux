@@ -383,7 +383,7 @@ public class ECConfig {
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Light Creeper")
             @Config.RangeDouble(min = 0)
-            public double explosionRadius = 12.0;
+            public double explosionRadius = 3.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Light Creeper")
