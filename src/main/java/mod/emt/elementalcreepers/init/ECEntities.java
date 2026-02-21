@@ -110,7 +110,7 @@ public class ECEntities {
         }
 
         if (ECConfig.ENTITIES.FIRE_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityFireCreeper.class, ECConfig.ENTITIES.FIRE_CREEPER.spawnWeight, ECConfig.ENTITIES.FIRE_CREEPER.spawnMin, ECConfig.ENTITIES.FIRE_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.NETHER));
+            EntityRegistry.addSpawn(ECEntityFireCreeper.class, ECConfig.ENTITIES.FIRE_CREEPER.spawnWeight, ECConfig.ENTITIES.FIRE_CREEPER.spawnMin, ECConfig.ENTITIES.FIRE_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.FIRE_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.NETHER));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityFireCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
 
@@ -120,7 +120,7 @@ public class ECEntities {
         }
 
         if (ECConfig.ENTITIES.GHOST_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityGhostCreeper.class, ECConfig.ENTITIES.GHOST_CREEPER.spawnWeight, ECConfig.ENTITIES.GHOST_CREEPER.spawnMin, ECConfig.ENTITIES.GHOST_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.SPOOKY));
+            EntityRegistry.addSpawn(ECEntityGhostCreeper.class, ECConfig.ENTITIES.GHOST_CREEPER.spawnWeight, ECConfig.ENTITIES.GHOST_CREEPER.spawnMin, ECConfig.ENTITIES.GHOST_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.GHOST_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.SPOOKY));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityGhostCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
 
@@ -130,7 +130,7 @@ public class ECEntities {
         }
 
         if (ECConfig.ENTITIES.LIGHT_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityLightCreeper.class, ECConfig.ENTITIES.LIGHT_CREEPER.spawnWeight, ECConfig.ENTITIES.LIGHT_CREEPER.spawnMin, ECConfig.ENTITIES.LIGHT_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.NETHER));
+            EntityRegistry.addSpawn(ECEntityLightCreeper.class, ECConfig.ENTITIES.LIGHT_CREEPER.spawnWeight, ECConfig.ENTITIES.LIGHT_CREEPER.spawnMin, ECConfig.ENTITIES.LIGHT_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.LIGHT_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.NETHER));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityLightCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
 
@@ -140,7 +140,7 @@ public class ECEntities {
         }
 
         if (ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityPsychicCreeper.class, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnWeight, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnMin, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.HILLS, Type.MOUNTAIN));
+            EntityRegistry.addSpawn(ECEntityPsychicCreeper.class, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnWeight, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnMin, ECConfig.ENTITIES.PSYCHIC_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.PSYCHIC_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.HILLS, Type.MOUNTAIN));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityPsychicCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
 
@@ -158,12 +158,12 @@ public class ECEntities {
         }
 
         if (ECConfig.ENTITIES.WATER_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityWaterCreeper.class, ECConfig.ENTITIES.WATER_CREEPER.spawnWeight, ECConfig.ENTITIES.WATER_CREEPER.spawnMin, ECConfig.ENTITIES.WATER_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.BEACH, Type.OCEAN, Type.RIVER));
+            EntityRegistry.addSpawn(ECEntityWaterCreeper.class, ECConfig.ENTITIES.WATER_CREEPER.spawnWeight, ECConfig.ENTITIES.WATER_CREEPER.spawnMin, ECConfig.ENTITIES.WATER_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.WATER_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.BEACH, Type.OCEAN, Type.RIVER));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityWaterCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
 
         if (ECConfig.ENTITIES.WINTER_CREEPER.spawnWeight > 0) {
-            EntityRegistry.addSpawn(ECEntityWinterCreeper.class, ECConfig.ENTITIES.WINTER_CREEPER.spawnWeight, ECConfig.ENTITIES.WINTER_CREEPER.spawnMin, ECConfig.ENTITIES.WINTER_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.GENERAL.classicSpawns ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.SNOWY));
+            EntityRegistry.addSpawn(ECEntityWinterCreeper.class, ECConfig.ENTITIES.WINTER_CREEPER.spawnWeight, ECConfig.ENTITIES.WINTER_CREEPER.spawnMin, ECConfig.ENTITIES.WINTER_CREEPER.spawnMax, EnumCreatureType.MONSTER, ECConfig.ENTITIES.WINTER_CREEPER.classicSpawning ? getEntityBiomes(EntityCreeper.class) : getBiomeTypes(Type.SNOWY));
             EntitySpawnPlacementRegistry.setPlacementType(ECEntityWinterCreeper.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         }
     }

@@ -254,6 +254,10 @@ public class ECConfig {
             @Config.RangeDouble(min = 0)
             public double armor = 0;
 
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Fire Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Fire Creeper")
             @Config.RangeDouble(min = 0)
@@ -332,6 +336,10 @@ public class ECConfig {
             @Config.RangeDouble(min = 0)
             public double armor = 0;
 
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Ghost Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Ghost Creeper")
             @Config.RangeDouble(min = 0)
@@ -406,6 +414,10 @@ public class ECConfig {
             @Config.RangeDouble(min = 0)
             public double armor = 0;
 
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Light Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Light Creeper")
             @Config.RangeDouble(min = 0)
@@ -479,6 +491,10 @@ public class ECConfig {
             @Config.Comment("The amount of armor the Psychic Creeper has")
             @Config.RangeDouble(min = 0)
             public double armor = 0;
+
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Psychic Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Psychic Creeper")
@@ -627,6 +643,10 @@ public class ECConfig {
             @Config.RangeDouble(min = 0)
             public double armor = 0;
 
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Water Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Water Creeper")
             @Config.RangeDouble(min = 0)
@@ -669,6 +689,10 @@ public class ECConfig {
             @Config.RangeDouble(min = 0)
             public double armor = 0;
 
+            @Config.Name("Classic Spawning")
+            @Config.Comment("Makes the Winter Creeper spawn everywhere regardless of biome, just like the original Elemental Creepers versions")
+            public boolean classicSpawning = false;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Winter Creeper")
             @Config.RangeDouble(min = 0)
@@ -703,12 +727,6 @@ public class ECConfig {
     }
 
     public static class GeneralSettings {
-        @Config.Name("Classic Spawns")
-        @Config.Comment({
-                "Forces all creepers to spawn on any biome without being limited to biome spawn conditions just like the original versions of Elemental Creepers",
-                "Magma Creepers are the primary exception to this rule and will still spawn in the Nether"
-        })
-        public boolean classicSpawns = false;
     }
 
     @Mod.EventBusSubscriber(modid = ElementalCreepersRedux.MOD_ID)
