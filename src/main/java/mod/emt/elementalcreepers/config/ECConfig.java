@@ -81,7 +81,6 @@ public class ECConfig {
         public static class CookieCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Cookie Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -95,12 +94,10 @@ public class ECConfig {
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Cookie Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Cookie Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -122,7 +119,6 @@ public class ECConfig {
         public static class DarkCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Dark Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -131,17 +127,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Dark Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 12.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Dark Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Dark Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -165,14 +158,12 @@ public class ECConfig {
 
             @Config.Name("Underground Spawning Max Y Height")
             @Config.Comment("The maximum Y height that the Dark Creeper can spawn up to")
-            @Config.RangeDouble(min = 1.0)
             public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class EarthCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Earth Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -181,17 +172,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Earth Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 8.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Earth Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Earth Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -215,29 +203,24 @@ public class ECConfig {
 
             @Config.Name("Underground Spawning Max Y Height")
             @Config.Comment("The maximum Y height that the Earth Creeper can spawn up to")
-            @Config.RangeDouble(min = 1.0)
             public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class ElectricCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Electric Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Electric Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 8.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Electric Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Electric Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Surface Spawning")
@@ -263,7 +246,6 @@ public class ECConfig {
         public static class FireCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Fire Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -276,17 +258,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Fire Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 6.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Fire Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Fire Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -308,22 +287,18 @@ public class ECConfig {
         public static class FriendlyCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Friendly Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Friendly Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 3.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Friendly Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Friendly Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Surface Spawning")
@@ -349,7 +324,6 @@ public class ECConfig {
         public static class GhostCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Ghost Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -362,17 +336,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Ghost Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 3.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Ghost Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Ghost Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -394,22 +365,18 @@ public class ECConfig {
         public static class IllusionCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Illusion Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Illusion Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 3.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Illusion Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Illusion Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -431,7 +398,6 @@ public class ECConfig {
         public static class LightCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Light Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -444,17 +410,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Light Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 3.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Light Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Light Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -476,7 +439,6 @@ public class ECConfig {
         public static class MagmaCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Magma Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -485,17 +447,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Magma Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 5.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Magma Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Magma Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -517,7 +476,6 @@ public class ECConfig {
         public static class PsychicCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Psychic Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -530,22 +488,18 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Psychic Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 3.0;
 
             @Config.Name("Explosion Knockback Strength")
             @Config.Comment("The explosion knockback strength of the Psychic Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double explosionKnockbackStrength = 5.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Psychic Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Psychic Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Surface Spawning")
@@ -571,7 +525,6 @@ public class ECConfig {
         public static class ReverseCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Reverse Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -584,12 +537,10 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Reverse Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 6.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Reverse Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Middle Island End Spawning")
@@ -598,7 +549,6 @@ public class ECConfig {
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Reverse Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
@@ -625,7 +575,6 @@ public class ECConfig {
         public static class SpiderCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Spider Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -634,17 +583,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Spider Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 7.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Spider Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Spider Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Poison Time")
@@ -673,14 +619,12 @@ public class ECConfig {
 
             @Config.Name("Underground Spawning Max Y Height")
             @Config.Comment("The maximum Y height that the Spider Creeper can spawn up to")
-            @Config.RangeDouble(min = 1.0)
             public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class WaterCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Water Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -693,22 +637,18 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Water Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 5.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Water Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Water Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Permanent Water Radius")
             @Config.Comment("This affects how much permanent water you want the Water Creeper to leave out after exploding")
-            @Config.RangeDouble(min = 0)
             public double permanentWaterRadius = 1.0;
 
             @Config.Name("Spawn Max")
@@ -730,7 +670,6 @@ public class ECConfig {
         public static class WinterCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Winter Creeper has")
-            @Config.RangeDouble(min = 0)
             public double armor = 0;
 
             @Config.Name("Classic Explosion")
@@ -743,17 +682,14 @@ public class ECConfig {
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Winter Creeper")
-            @Config.RangeDouble(min = 0)
             public double explosionRadius = 10.0;
 
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Winter Creeper")
-            @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Winter Creeper")
-            @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
             @Config.Name("Spawn Max")
