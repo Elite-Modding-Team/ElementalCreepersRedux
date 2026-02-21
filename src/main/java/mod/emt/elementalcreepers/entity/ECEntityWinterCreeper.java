@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockSnow;
@@ -89,7 +90,7 @@ public class ECEntityWinterCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_SNOW_PLACE);
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.WINTER_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.BLOCK_SNOW_PLACE);
     }
 
     @Nullable

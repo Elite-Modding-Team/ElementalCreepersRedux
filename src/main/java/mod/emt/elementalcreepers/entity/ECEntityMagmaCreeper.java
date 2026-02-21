@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -53,7 +54,7 @@ public class ECEntityMagmaCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.ITEM_BUCKET_EMPTY_LAVA);
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.MAGMA_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.ITEM_BUCKET_EMPTY_LAVA);
     }
 
     @Nullable

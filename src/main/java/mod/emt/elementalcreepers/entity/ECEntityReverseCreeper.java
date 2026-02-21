@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
@@ -70,7 +71,7 @@ public class ECEntityReverseCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_PISTON_EXTEND);
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.REVERSE_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.BLOCK_PISTON_EXTEND);
     }
 
     @Override

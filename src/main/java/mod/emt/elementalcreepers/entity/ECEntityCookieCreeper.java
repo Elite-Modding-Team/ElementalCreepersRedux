@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
@@ -48,7 +49,7 @@ public class ECEntityCookieCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(5.0D, SoundEvents.ENTITY_GENERIC_EAT);
+        handleNetworkedExplosionEffects(5.0D, ECConfig.ENTITIES.COOKIE_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.ENTITY_GENERIC_EAT);
     }
 
     @Nullable

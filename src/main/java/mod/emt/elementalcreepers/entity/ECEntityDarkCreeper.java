@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -76,7 +77,7 @@ public class ECEntityDarkCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE);
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.DARK_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE);
     }
 
     @Override

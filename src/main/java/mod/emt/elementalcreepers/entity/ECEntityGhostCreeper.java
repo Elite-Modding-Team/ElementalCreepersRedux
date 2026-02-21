@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
@@ -42,8 +43,10 @@ public class ECEntityGhostCreeper extends ECEntityElementalCreeper {
             worldServer.spawnParticle(EnumParticleTypes.END_ROD, this.posX, this.posY, this.posZ, 30, 1.0, 1.0, 1.0, 0.05);
         }*/
 
-        this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, SoundCategory.HOSTILE, 2.0F, (2.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
-        handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_GENERIC_EXPLODE);
+        if (!ECConfig.ENTITIES.GHOST_CREEPER.classicExplosionSound) {
+            this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, SoundCategory.HOSTILE, 2.0F, (2.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
+        }
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.GHOST_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.ENTITY_GENERIC_EXPLODE);
     }
 
     @Nullable

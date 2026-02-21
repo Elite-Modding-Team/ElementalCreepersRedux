@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers.entity;
 
 import mod.emt.elementalcreepers.config.ECConfig;
 import mod.emt.elementalcreepers.init.ECLootTables;
+import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -57,7 +58,7 @@ public class ECEntityFireCreeper extends ECEntityElementalCreeper {
             }
         }
 
-        handleNetworkedExplosionEffects(radius, SoundEvents.ITEM_FIRECHARGE_USE);
+        handleNetworkedExplosionEffects(radius, ECConfig.ENTITIES.FIRE_CREEPER.classicExplosionSound ? ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent() : SoundEvents.ITEM_FIRECHARGE_USE);
     }
 
     @Nullable
