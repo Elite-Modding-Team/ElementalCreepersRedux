@@ -92,6 +92,10 @@ public class ECConfig {
             @Config.RangeInt(min = 0, max = 256)
             public int cookieQuantity = 8;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Cookie Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Cookie Creeper")
             public double maxHealth = 20.0;
@@ -124,6 +128,10 @@ public class ECConfig {
             @Config.Name("Classic Explosion")
             @Config.Comment("Makes the Dark Creeper play the classic explosion sound from Beta after exploding")
             public boolean classicExplosionSound = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Dark Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Dark Creeper")
@@ -170,6 +178,10 @@ public class ECConfig {
             @Config.Comment("Makes the Earth Creeper play the classic explosion sound from Beta after exploding")
             public boolean classicExplosionSound = false;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Earth Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Earth Creeper")
             public double explosionRadius = 8.0;
@@ -210,6 +222,10 @@ public class ECConfig {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Electric Creeper has")
             public double armor = 0;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Electric Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Electric Creeper")
@@ -256,6 +272,10 @@ public class ECConfig {
             @Config.Comment("Makes the Fire Creeper spawn everywhere (excluding dimension and mushroom biome types) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Fire Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Fire Creeper")
             public double explosionRadius = 6.0;
@@ -288,6 +308,10 @@ public class ECConfig {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Friendly Creeper has")
             public double armor = 0;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Friendly Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Friendly Creeper")
@@ -334,6 +358,10 @@ public class ECConfig {
             @Config.Comment("Makes the Ghost Creeper spawn everywhere (excluding dimension and mushroom biome types)) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Ghost Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Ghost Creeper")
             public double explosionRadius = 3.0;
@@ -366,6 +394,10 @@ public class ECConfig {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Illusion Creeper has")
             public double armor = 0;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Illusion Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Illusion Creeper")
@@ -408,6 +440,10 @@ public class ECConfig {
             @Config.Comment("Makes the Light Creeper spawn everywhere (excluding dimension and mushroom biome types) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Light Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Light Creeper")
             public double explosionRadius = 3.0;
@@ -444,6 +480,10 @@ public class ECConfig {
             @Config.Name("Classic Explosion")
             @Config.Comment("Makes the Magma Creeper play the classic explosion sound from Beta after exploding")
             public boolean classicExplosionSound = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Magma Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Magma Creeper")
@@ -485,6 +525,10 @@ public class ECConfig {
             @Config.Name("Classic Spawning")
             @Config.Comment("Makes the Psychic Creeper spawn everywhere (excluding dimension and mushroom biome types) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Psychic Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Psychic Creeper")
@@ -530,6 +574,10 @@ public class ECConfig {
             @Config.Name("Classic Explosion")
             @Config.Comment("Makes the Reverse Creeper play the classic explosion sound from Beta after exploding")
             public boolean classicExplosionSound = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Reverse Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("End Spawning")
             @Config.Comment("Makes the Reverse Creeper also spawn in the End")
@@ -580,6 +628,10 @@ public class ECConfig {
             @Config.Name("Classic Explosion")
             @Config.Comment("Makes the Spider Creeper play the classic explosion sound from Beta after exploding")
             public boolean classicExplosionSound = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Spider Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Spider Creeper")
@@ -635,6 +687,10 @@ public class ECConfig {
             @Config.Comment("Makes the Water Creeper spawn everywhere (excluding dimension and mushroom biome types) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
 
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Water Creeper")
+            public boolean enableEntity = true;
+
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Water Creeper")
             public double explosionRadius = 5.0;
@@ -679,6 +735,10 @@ public class ECConfig {
             @Config.Name("Classic Spawning")
             @Config.Comment("Makes the Winter Creeper spawn everywhere (excluding dimension and mushroom biome types) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
+
+            @Config.Name("Enable Entity")
+            @Config.Comment("Enables the Winter Creeper")
+            public boolean enableEntity = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Winter Creeper")
