@@ -51,6 +51,12 @@ public class ECEntityEarthCreeper extends ECEntityElementalCreeper {
         handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_GRAVEL_STEP);
     }
 
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.EARTH_CREEPER.undergroundSpawning ? super.getCanSpawnHere() && !this.world.canSeeSky(new BlockPos(this)) && (this.posY <= ECConfig.ENTITIES.EARTH_CREEPER.undergroundSpawningMaxYHeight)
+                : super.getCanSpawnHere();
+    }
+
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {

@@ -14,6 +14,7 @@ import javax.annotation.Nullable;
 public class ECEntityLightCreeper extends ECEntityElementalCreeper {
     public ECEntityLightCreeper(World world) {
         super(world);
+        this.isImmuneToFire = true;
     }
 
     @Override

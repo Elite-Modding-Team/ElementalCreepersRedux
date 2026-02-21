@@ -8,6 +8,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -50,6 +51,11 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
 
 
         handleNetworkedExplosionEffects(radius, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.ELECTRIC_CREEPER.surfaceSpawning ? super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this)) : super.getCanSpawnHere();
     }
 
     @Nullable

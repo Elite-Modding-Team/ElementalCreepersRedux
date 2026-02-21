@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -63,6 +64,11 @@ public class ECEntityPsychicCreeper extends ECEntityElementalCreeper {
         }
 
         handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_SHULKER_SHOOT);
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.PSYCHIC_CREEPER.surfaceSpawning ? super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this)) : super.getCanSpawnHere();
     }
 
     @Nullable

@@ -79,6 +79,12 @@ public class ECEntityDarkCreeper extends ECEntityElementalCreeper {
         handleNetworkedExplosionEffects(radius, SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE);
     }
 
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.DARK_CREEPER.undergroundSpawning ? super.getCanSpawnHere() && !this.world.canSeeSky(new BlockPos(this)) && (this.posY <= ECConfig.ENTITIES.DARK_CREEPER.undergroundSpawningMaxYHeight)
+                : super.getCanSpawnHere();
+    }
+
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {

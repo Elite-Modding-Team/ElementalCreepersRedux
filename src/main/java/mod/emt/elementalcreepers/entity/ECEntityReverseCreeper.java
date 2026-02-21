@@ -73,6 +73,26 @@ public class ECEntityReverseCreeper extends ECEntityElementalCreeper {
         handleNetworkedExplosionEffects(radius, SoundEvents.BLOCK_PISTON_EXTEND);
     }
 
+    @Override
+    public boolean getCanSpawnHere() {
+        // Middle end island check
+        if (this.world.provider.getDimension() == 1) {
+            if (!ECConfig.ENTITIES.REVERSE_CREEPER.middleIslandEndSpawning) {
+                return super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this)) && (this.posX > 500.0D || this.posX < -500.0D || this.posZ > 500.0D || this.posZ < -500.0D);
+            } else {
+                return super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this));
+            }
+        }
+
+        return super.getCanSpawnHere();
+    }
+
+    @Override
+    public int getMaxSpawnedInChunk() {
+        // Reduce numbers in the End
+        return this.world.provider.getDimension() == 1 ? 1 : 4;
+    }
+
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {

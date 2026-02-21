@@ -159,6 +159,12 @@ public class ECEntitySpiderCreeper extends ECEntityElementalCreeper {
         return SoundEvents.ENTITY_SPIDER_HURT;
     }
 
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.SPIDER_CREEPER.undergroundSpawning ? super.getCanSpawnHere() && !this.world.canSeeSky(new BlockPos(this)) && (this.posY <= ECConfig.ENTITIES.SPIDER_CREEPER.undergroundSpawningMaxYHeight)
+                : super.getCanSpawnHere();
+    }
+
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {

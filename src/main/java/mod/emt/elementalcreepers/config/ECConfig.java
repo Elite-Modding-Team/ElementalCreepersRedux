@@ -102,17 +102,17 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Cookie Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 1;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Cookie Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Cookie Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 2;
         }
 
         public static class DarkCreeper {
@@ -144,12 +144,21 @@ public class ECConfig {
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Dark Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Dark Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
+
+            @Config.Name("Underground Spawning")
+            @Config.Comment("Makes the Dark Creeper only spawn underground and prevents it from spawning under the sky")
+            public boolean undergroundSpawning = true;
+
+            @Config.Name("Underground Spawning Max Y Height")
+            @Config.Comment("The maximum Y height that the Dark Creeper can spawn up to")
+            @Config.RangeDouble(min = 1.0)
+            public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class EarthCreeper {
@@ -176,17 +185,26 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Earth Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 2;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Earth Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Earth Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
+
+            @Config.Name("Underground Spawning")
+            @Config.Comment("Makes the Earth Creeper only spawn underground and prevents it from spawning under the sky")
+            public boolean undergroundSpawning = true;
+
+            @Config.Name("Underground Spawning Max Y Height")
+            @Config.Comment("The maximum Y height that the Earth Creeper can spawn up to")
+            @Config.RangeDouble(min = 1.0)
+            public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class ElectricCreeper {
@@ -210,20 +228,24 @@ public class ECConfig {
             @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
+            @Config.Name("Surface Spawning")
+            @Config.Comment("Makes the Electric Creeper only spawn on the surface and prevents it from spawning in caves")
+            public boolean surfaceSpawning = true;
+
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Electric Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 2;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Electric Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Electric Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 10;
         }
 
         public static class FireCreeper {
@@ -260,7 +282,7 @@ public class ECConfig {
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Fire Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 40;
         }
 
         public static class FriendlyCreeper {
@@ -284,20 +306,24 @@ public class ECConfig {
             @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
+            @Config.Name("Surface Spawning")
+            @Config.Comment("Makes the Friendly Creeper only spawn on the surface and prevents it from spawning in caves")
+            public boolean surfaceSpawning = true;
+
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Friendly Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 1;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Friendly Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Friendly Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 10;
         }
 
         public static class GhostCreeper {
@@ -334,7 +360,7 @@ public class ECConfig {
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Ghost Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 50;
         }
 
         public static class IllusionCreeper {
@@ -361,17 +387,17 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Illusion Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 2;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Illusion Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Illusion Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
         }
 
         public static class LightCreeper {
@@ -398,17 +424,17 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Light Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 1;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Light Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Light Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 10;
         }
 
         public static class MagmaCreeper {
@@ -435,17 +461,17 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Magma Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 1;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Magma Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Magma Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
         }
 
         public static class PsychicCreeper {
@@ -474,20 +500,24 @@ public class ECConfig {
             @Config.RangeDouble(min = 0.0)
             public double movementSpeed = 0.25;
 
+            @Config.Name("Surface Spawning")
+            @Config.Comment("Makes the Psychic Creeper only spawn on the surface and prevents it from spawning in caves")
+            public boolean surfaceSpawning = true;
+
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Psychic Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 1;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Psychic Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Psychic Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
         }
 
         public static class ReverseCreeper {
@@ -495,6 +525,10 @@ public class ECConfig {
             @Config.Comment("The amount of armor the Reverse Creeper has")
             @Config.RangeDouble(min = 0)
             public double armor = 0;
+
+            @Config.Name("End Spawning")
+            @Config.Comment("Makes the Reverse Creeper also spawn in the End")
+            public boolean endSpawning = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Reverse Creeper")
@@ -505,6 +539,10 @@ public class ECConfig {
             @Config.Comment("The maximum health of the Reverse Creeper")
             @Config.RangeDouble(min = 1.0)
             public double maxHealth = 20.0;
+
+            @Config.Name("Middle Island End Spawning")
+            @Config.Comment("Reverse Creepers spawning in the End will also spawn in the middle island where the dragon is located")
+            public boolean middleIslandEndSpawning = false;
 
             @Config.Name("Movement Speed")
             @Config.Comment("The movement speed of the Reverse Creeper")
@@ -519,7 +557,12 @@ public class ECConfig {
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Reverse Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
+
+            @Config.Name("Spawn Weight")
+            @Config.Comment("The spawn weight of the Reverse Creeper in the End")
+            @Config.RangeInt(min = 0)
+            public int spawnWeightEnd = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Reverse Creeper")
@@ -561,12 +604,21 @@ public class ECConfig {
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Spider Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Spider Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 20;
+
+            @Config.Name("Underground Spawning")
+            @Config.Comment("Makes the Spider Creeper only spawn underground and prevents it from spawning under the sky")
+            public boolean undergroundSpawning = true;
+
+            @Config.Name("Underground Spawning Max Y Height")
+            @Config.Comment("The maximum Y height that the Spider Creeper can spawn up to")
+            @Config.RangeDouble(min = 1.0)
+            public double undergroundSpawningMaxYHeight = 50.0;
         }
 
         public static class WaterCreeper {
@@ -598,17 +650,17 @@ public class ECConfig {
             @Config.Name("Spawn Max")
             @Config.Comment("The maximum spawn group size of the Water Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMax = 4;
+            public int spawnMax = 2;
 
             @Config.Name("Spawn Min")
             @Config.Comment("The minimum spawn group size of the Water Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnMin = 4;
+            public int spawnMin = 1;
 
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Water Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 40;
         }
 
         public static class WinterCreeper {
@@ -645,7 +697,7 @@ public class ECConfig {
             @Config.Name("Spawn Weight")
             @Config.Comment("The spawn weight of the Winter Creeper")
             @Config.RangeInt(min = 0)
-            public int spawnWeight = 5;
+            public int spawnWeight = 50;
         }
 
     }

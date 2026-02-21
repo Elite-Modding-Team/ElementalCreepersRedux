@@ -25,6 +25,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -466,6 +467,12 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     @Override
     public boolean canBeLeashedTo(EntityPlayer player) {
         return !this.isAngry() && super.canBeLeashedTo(player);
+    }
+
+    // TODO: Change spawning to nighttime like other creepers
+    @Override
+    public boolean getCanSpawnHere() {
+        return ECConfig.ENTITIES.FRIENDLY_CREEPER.surfaceSpawning ? super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this)) : super.getCanSpawnHere();
     }
 
     @Nullable
