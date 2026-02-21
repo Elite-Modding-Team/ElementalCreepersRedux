@@ -703,9 +703,12 @@ public class ECConfig {
     }
 
     public static class GeneralSettings {
-        /*@Config.Name("Debug Mode")
-        @Config.Comment("Prints debug values to console")
-        public boolean debugMode = false;*/
+        @Config.Name("Classic Spawns")
+        @Config.Comment({
+                "Forces all creepers to spawn on any biome without being limited to biome spawn conditions just like the original versions of Elemental Creepers",
+                "Magma Creepers are the primary exception to this rule and will still spawn in the Nether"
+        })
+        public boolean classicSpawns = false;
     }
 
     @Mod.EventBusSubscriber(modid = ElementalCreepersRedux.MOD_ID)
