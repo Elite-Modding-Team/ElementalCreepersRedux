@@ -1,6 +1,10 @@
 # Elemental Creepers Redux
 
-**Elemental Creepers Redux** is mostly a backport of [Elemental Creepers OG](https://www.curseforge.com/minecraft/mc-mods/elemental-creepers-og) while also introducing its own features and changes to have a more definitive elemental creepers mod for 1.12.2.
+![Elemental Creepers Redux](docs/title.png)
+
+Tired of Survival being too boring? Do you want your game to have more mobs that grief? Introducing more creeper variants!
+
+**Elemental Creepers Redux** features a large variety of new creepers based on different elements. It backports the creepers from [Elemental Creepers OG](https://www.curseforge.com/minecraft/mc-mods/elemental-creepers-og) by xSmallDeadGuyx, and introduces its own features and changes to have a more definitive Elemental Creepers mod for 1.12.2.
 
 ---
 
@@ -25,6 +29,47 @@ The recognizable cast of creepers since the original Elemental Creepers mod!
 - **Spider Creeper:** The result of a failed experiment, these mutated creepers will spread its webs and inflict poison after exploding. It can also climb like normal spiders can.
 - **Water Creeper:** Loves water parks, hates deserts. It'll explode into water and make a big mess if you have plants and torches everywhere.
 - **Winter Creeper (Formerly Ice Creeper):** The sole quest of this creeper is to turn everything into a snow biome! It will explode into snow layers, and freeze water and lava.
+
+---
+
+## New Elemental Creepers
+
+**Coming soon to future updates near you...**
+
+---
+
+## Other Features
+
+Extra features that make this port a little more unique.
+
+- Fading animation for Ghost Creepers
+- Many config options to adjust attributes, adjust spawning conditions, and even turn off creepers you don't want
+- Quality of life, with some adjustments to balancing for Survival, and additional drops to make them a little more rewarding
+- The classic explosion sound from Beta as a config option for most creepers
+
+---
+
+## Spawn Conditions
+
+Some creepers were adjusted to only spawn under certain conditions to make them not get too in the way of vanilla mobs. If you want them to spawn everywhere again like in older versions, you can enable `Classic Spawning` in the config file for all the affected creepers.
+
+Be sure to also disable other spawn conditions as well, such as `Surface Spawning` and `Underground Spawning`.
+
+- **Cookie Creeper:** Rarely spawns anywhere
+- **Dark Creeper:** Spawns anywhere underground
+- **Earth Creeper:** Spawns anywhere underground
+- **Electric Creeper:** Spawns anywhere at the surface
+- **Fire Creeper:** Spawns in the Nether
+- **Friendly Creeper:** Spawns anywhere at the surface
+- **Ghost Creeper:** Spawns in `SPOOKY` type biomes, also rarely spawns when killing any creeper
+- **Illusion Creeper:** Spawns anywhere
+- **Light Creeper:** Rarely spawns in the Nether
+- **Magma Creeper:** Spawns in the Nether
+- **Psychic Creeper:** Spawns in `HILLS` and `MOUNTAIN` type biomes at the surface
+- **Reverse Creeper:** Spawns anywhere uncommonly, also spawns in the End's outer islands
+- **Spider Creeper:** Spawns anywhere underground
+- **Water Creeper:** Spawns in `BEACH`, `OCEAN`, and `RIVER` type biomes
+- **Winter Creeper:** Spawns in `SNOWY` type biomes
 
 ---
 
