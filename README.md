@@ -82,3 +82,13 @@ Be sure to also disable other spawn conditions as well, such as `Surface Spawnin
 - None yet!
 
 ---
+
+## Licensing
+
+Code from this mod is licensed as GNU Lesser Public License v3 (see LICENSE.txt).
+
+Assets specifically made for this mod are licensed as All Rights Reserved (see LICENSE-ASSETS.txt).
+
+Any alternate licenses (like content from Elemental Creepers OG) are noted where appropriate.
+
+---
