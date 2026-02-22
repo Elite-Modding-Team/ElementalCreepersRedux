@@ -49,7 +49,6 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
             entity.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 15.0F);
         }
 
-
         handleNetworkedExplosionEffects(radius, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());
     }
 
