@@ -55,21 +55,21 @@ Some creepers were adjusted to only spawn under certain conditions to make them 
 
 Be sure to also disable other spawn conditions as well, such as `Surface Spawning` and `Underground Spawning`.
 
-- **Cookie Creeper:** Rarely spawns anywhere
-- **Dark Creeper:** Spawns anywhere underground
-- **Earth Creeper:** Spawns anywhere underground
-- **Electric Creeper:** Spawns anywhere at the surface
-- **Fire Creeper:** Spawns in the Nether
-- **Friendly Creeper:** Spawns anywhere at the surface
-- **Ghost Creeper:** Spawns in `SPOOKY` type biomes, also rarely spawns when killing any creeper
-- **Illusion Creeper:** Spawns anywhere
-- **Light Creeper:** Rarely spawns in the Nether
-- **Magma Creeper:** Spawns in the Nether
-- **Psychic Creeper:** Spawns in `HILLS` and `MOUNTAIN` type biomes at the surface
-- **Reverse Creeper:** Spawns anywhere uncommonly, also spawns in the End's outer islands
-- **Spider Creeper:** Spawns anywhere underground
-- **Water Creeper:** Spawns in `BEACH`, `OCEAN`, and `RIVER` type biomes
-- **Winter Creeper:** Spawns in `SNOWY` type biomes
+- **Cookie Creeper:** Rarely spawns anywhere.
+- **Dark Creeper:** Spawns anywhere underground.
+- **Earth Creeper:** Spawns anywhere underground.
+- **Electric Creeper:** Spawns anywhere at the surface.
+- **Fire Creeper:** Spawns in the Nether.
+- **Friendly Creeper:** Spawns anywhere at the surface.
+- **Ghost Creeper:** Spawns in `SPOOKY` type biomes, also rarely spawns when killing any creeper.
+- **Illusion Creeper:** Spawns anywhere.
+- **Light Creeper:** Rarely spawns in the Nether.
+- **Magma Creeper:** Spawns in the Nether.
+- **Psychic Creeper:** Spawns in `HILLS` and `MOUNTAIN` type biomes at the surface.
+- **Reverse Creeper:** Spawns anywhere uncommonly, also spawns in the End's outer islands.
+- **Spider Creeper:** Spawns anywhere underground.
+- **Water Creeper:** Spawns in `BEACH`, `OCEAN`, and `RIVER` type biomes.
+- **Winter Creeper:** Spawns in `SNOWY` type biomes.
 
 ---
 
