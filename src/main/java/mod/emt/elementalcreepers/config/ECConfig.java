@@ -17,6 +17,11 @@ public class ECConfig {
     @Config.Comment("Settings for entities")
     public static final Entities ENTITIES = new Entities();
 
+    public enum EnumLists {
+        WHITELIST,
+        BLACKLIST
+    }
+
     public static class Entities {
         @Config.LangKey("config.elementalcreepers.cookie_creeper")
         @Config.Comment("Cookie Creeper settings")
@@ -124,6 +129,18 @@ public class ECConfig {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Dark Creeper has")
             public double armor = 0;
+
+            @Config.Name("Light Block List")
+            @Config.Comment("List of light blocks for the Dark Creeper to interact with")
+            public String[] lightBlockList = new String[]{};
+
+            @Config.Name("Light Block List Mode")
+            @Config.Comment
+                    ({
+                            "Blacklist Mode: The Dark Creeper's explosion ignores all light blocks in the list",
+                            "Whitelist Mode: The Dark Creeper's explosion will only destroy the light blocks in the list"
+                    })
+            public EnumLists lightBlockListMode = EnumLists.BLACKLIST;
 
             @Config.Name("Classic Explosion")
             @Config.Comment("Makes the Dark Creeper play the classic explosion sound from Beta after exploding")

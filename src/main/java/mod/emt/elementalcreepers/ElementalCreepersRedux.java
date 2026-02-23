@@ -2,6 +2,7 @@ package mod.emt.elementalcreepers;
 
 import static mod.emt.elementalcreepers.ElementalCreepersRedux.*;
 
+import mod.emt.elementalcreepers.config.ECConfigLists;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,6 +34,8 @@ public class ElementalCreepersRedux {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         LOGGER.info(NAME + " initialized");
+
+        ECConfigLists.initLists();
     }
 
     @Mod.EventHandler
