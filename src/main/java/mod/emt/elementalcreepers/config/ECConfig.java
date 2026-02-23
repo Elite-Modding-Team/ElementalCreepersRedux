@@ -265,6 +265,10 @@ public class ECConfig {
             @Config.Comment("The explosion radius of the Electric Creeper")
             public double explosionRadius = 8.0;
 
+            @Config.Name("Lightning Bolt Damage")
+            @Config.Comment("The amount of damage dealt by the Electric Creeper's lightning bolts")
+            public double lightningBoltDamage = 18.0;
+
             @Config.Name("Max Health")
             @Config.Comment("The maximum health of the Electric Creeper")
             public double maxHealth = 20.0;

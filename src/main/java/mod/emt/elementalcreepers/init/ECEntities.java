@@ -39,7 +39,7 @@ public class ECEntities {
         EntityRegistry.registerModEntity(new ResourceLocation(ElementalCreepersRedux.MOD_ID, name), clazz, ElementalCreepersRedux.MOD_ID + "." + name, entityID++, ElementalCreepersRedux.instance, 64, 1, true, eggColor1, eggColor2);
     }
 
-    public static void registerEntity(String name, Class<? extends Entity> clazz) {
+    public static void registerEntity(String name, Class<? extends Entity> clazz, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
         EntityRegistry.registerModEntity(new ResourceLocation(ElementalCreepersRedux.MOD_ID, name), clazz, ElementalCreepersRedux.MOD_ID + "." + name, entityID++, ElementalCreepersRedux.instance, 64, 1, true);
     }
 
@@ -62,6 +62,8 @@ public class ECEntities {
         if (ECConfig.ENTITIES.SPIDER_CREEPER.enableEntity) registerEntity("spider_creeper", ECEntitySpiderCreeper.class, 2493707, 11013646);
         if (ECConfig.ENTITIES.WATER_CREEPER.enableEntity) registerEntity("water_creeper", ECEntityWaterCreeper.class, 5603516, Color.BLACK.getRGB());
         if (ECConfig.ENTITIES.WINTER_CREEPER.enableEntity) registerEntity("winter_creeper", ECEntityWinterCreeper.class, 13816530, Color.BLACK.getRGB());
+
+        registerEntity("electric_bolt", ECEntityElectricBolt.class, 512, 1, true);
 
         registerEntitySpawns();
     }
@@ -86,6 +88,8 @@ public class ECEntities {
         if (ECConfig.ENTITIES.SPIDER_CREEPER.enableEntity) RenderingRegistry.registerEntityRenderingHandler(ECEntitySpiderCreeper.class, new ECRenderSpiderCreeper.Factory());
         if (ECConfig.ENTITIES.WATER_CREEPER.enableEntity) RenderingRegistry.registerEntityRenderingHandler(ECEntityWaterCreeper.class, new ECRenderWaterCreeper.Factory());
         if (ECConfig.ENTITIES.WINTER_CREEPER.enableEntity) RenderingRegistry.registerEntityRenderingHandler(ECEntityWinterCreeper.class, new ECRenderWinterCreeper.Factory());
+
+        RenderingRegistry.registerEntityRenderingHandler(ECEntityElectricBolt.class, new ECRenderElectricBolt.Factory());
     }
 
     public static void registerEntitySpawns() {

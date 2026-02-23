@@ -5,8 +5,6 @@ import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -43,10 +41,8 @@ public class ECEntityElectricCreeper extends ECEntityElementalCreeper {
                 continue;
             }
 
-            EntityLightningBolt bolt = new EntityLightningBolt(this.world, entity.posX, entity.posY, entity.posZ, false);
-
-            this.world.addWeatherEffect(bolt);
-            entity.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 15.0F);
+            ECEntityElectricBolt bolt = new ECEntityElectricBolt(this.world, entity.posX, entity.posY, entity.posZ);
+            this.world.spawnEntity(bolt);
         }
 
         handleNetworkedExplosionEffects(radius, ECSoundEvents.RANDOM_EXPLOSION_CLASSIC.getSoundEvent());

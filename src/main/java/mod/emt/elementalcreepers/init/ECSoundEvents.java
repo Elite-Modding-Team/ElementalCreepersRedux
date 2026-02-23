@@ -5,6 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum ECSoundEvents {
+    RANDOM_ELECTRIC_STRIKE("random.electric_strike"),
     RANDOM_EXPLOSION_CLASSIC("random.explosion_classic"),
     RANDOM_GHOST_EXPLOSION("random.ghost_explosion"),
     RANDOM_GHOST_SPAWN("random.ghost_spawn"),

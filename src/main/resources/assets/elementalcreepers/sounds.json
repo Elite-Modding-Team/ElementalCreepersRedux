@@ -1,4 +1,11 @@
 {
+  "random.electric_strike": {
+    "sounds": [
+      "elementalcreepers:random/electric_strike1",
+      "elementalcreepers:random/electric_strike2",
+      "elementalcreepers:random/electric_strike3"
+    ]
+  },
   "random.explosion_classic": {
     "sounds": [
       "elementalcreepers:random/explosion_classic"
