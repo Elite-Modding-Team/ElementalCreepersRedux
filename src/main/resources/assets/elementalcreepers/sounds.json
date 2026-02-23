@@ -3,5 +3,20 @@
     "sounds": [
       "elementalcreepers:random/explosion_classic"
     ]
+  },
+  "random.ghost_explosion": {
+    "sounds": [
+      "elementalcreepers:random/ghost_explosion"
+    ]
+  },
+  "random.ghost_spawn": {
+    "sounds": [
+      "elementalcreepers:random/ghost_spawn"
+    ]
+  },
+  "random.ghost_vanish": {
+    "sounds": [
+      "elementalcreepers:random/ghost_spawn"
+    ]
   }
 }

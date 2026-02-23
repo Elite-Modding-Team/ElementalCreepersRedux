@@ -392,6 +392,34 @@ public class ECConfig {
             @Config.Comment("Makes the Ghost Creeper spawn everywhere (excluding dimension and mushroom biome types)) regardless of biome, just like the original Elemental Creepers versions")
             public boolean classicSpawning = false;
 
+            @Config.Name("Death Spawning Chance")
+            @Config.Comment
+                    ({
+                            "The chance for the Ghost Creeper to spawn from the death of living creepers",
+                            "Setting it to 0 will completely disable this feature"
+                    })
+            @Config.RangeDouble(min = 0, max = 1.0)
+            public double deathSpawningChance = 0.05;
+
+            @Config.Name("Death Spawning List")
+            @Config.Comment
+                    ({
+                            "List of creepers for the Ghost Creeper's death spawning",
+                            "Example: 'minecraft:creeper'"
+                    })
+            public String[] deathSpawningList = new String[]
+                    {
+                            "elementalcreepers:ghost_creeper"
+                    };
+
+            @Config.Name("Death Spawning List Mode")
+            @Config.Comment
+                    ({
+                            "Blacklist Mode: The Ghost Creeper ignores all killed creepers in the list",
+                            "Whitelist Mode: The Ghost Creeper will only spawn from killed creepers in the list"
+                    })
+            public EnumLists deathSpawningListMode = EnumLists.BLACKLIST;
+
             @Config.Name("Enable Entity")
             @Config.Comment("Enables the Ghost Creeper")
             public boolean enableEntity = true;
@@ -612,10 +640,6 @@ public class ECConfig {
             @Config.Name("Enable Entity")
             @Config.Comment("Enables the Reverse Creeper")
             public boolean enableEntity = true;
-
-            @Config.Name("End Spawning")
-            @Config.Comment("Makes the Reverse Creeper also spawn in the End")
-            public boolean endSpawning = true;
 
             @Config.Name("Explosion Radius")
             @Config.Comment("The explosion radius of the Reverse Creeper")

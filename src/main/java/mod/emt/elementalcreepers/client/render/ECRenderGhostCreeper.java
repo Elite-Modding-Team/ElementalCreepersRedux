@@ -51,6 +51,11 @@ public class ECRenderGhostCreeper extends RenderCreeper {
         GlStateManager.enableLighting();
     }
 
+    @Override
+    protected float getDeathMaxRotation(EntityCreeper entity) {
+        return 0.0F;
+    }
+
     /*@Override
     protected ResourceLocation getEntityTexture(EntityCreeper entity) {
         return TEXTURE;
