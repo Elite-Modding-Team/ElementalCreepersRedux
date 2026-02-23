@@ -128,17 +128,34 @@ public class ECConfig {
         public static class DarkCreeper {
             @Config.Name("Armor")
             @Config.Comment("The amount of armor the Dark Creeper has")
-            public double armor = 0;
+            public double armor = 0.0;
+
+            @Config.Name("Light Block Hardness Cap")
+            @Config.Comment("The Dark Creeper will never destroy light blocks that have a higher hardness than the cap")
+            public double lightBlockHardnessCap = 0.8;
+
+            @Config.Name("Light Block Light Level")
+            @Config.Comment
+                    ({
+                            "The Dark Creeper will never destroy light blocks below this level",
+                            "Set it to 0 if you want to make it destroy all light blocks"
+                    })
+            @Config.RangeInt(min = 0)
+            public int lightBlockLightLevel = 8;
 
             @Config.Name("Light Block List")
-            @Config.Comment("List of light blocks for the Dark Creeper to interact with")
+            @Config.Comment
+                    ({
+                            "List of light blocks for the Dark Creeper to interact with",
+                            "Example: 'minecraft:glowstone'"
+                    })
             public String[] lightBlockList = new String[]{};
 
             @Config.Name("Light Block List Mode")
             @Config.Comment
                     ({
-                            "Blacklist Mode: The Dark Creeper's explosion ignores all light blocks in the list",
-                            "Whitelist Mode: The Dark Creeper's explosion will only destroy the light blocks in the list"
+                            "Blacklist Mode: The Dark Creeper ignores all light blocks in the list",
+                            "Whitelist Mode: The Dark Creeper will only destroy the light blocks in the list"
                     })
             public EnumLists lightBlockListMode = EnumLists.BLACKLIST;
 

@@ -63,7 +63,7 @@ public class ECEntityDarkCreeper extends ECEntityElementalCreeper {
                         int lightValue = state.getLightValue(world, pos);
                         float hardness = state.getBlockHardness(world, pos);
 
-                        if (lightValue >= 8 && hardness >= 0 && hardness <= 0.8F) {
+                        if (lightValue >= ECConfig.ENTITIES.DARK_CREEPER.lightBlockLightLevel && hardness >= 0 && hardness <= ECConfig.ENTITIES.DARK_CREEPER.lightBlockHardnessCap) {
                             if (!world.isRemote && world instanceof WorldServer) {
                                 java.util.List<ItemStack> drops = block.getDrops(world, pos, state, 0);
 
