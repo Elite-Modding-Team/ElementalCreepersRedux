@@ -2,6 +2,8 @@ package mod.emt.elementalcreepers.client.render;
 
 import mod.emt.elementalcreepers.ElementalCreepersRedux;
 import mod.emt.elementalcreepers.entity.ECEntityLightCreeper;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderCreeper;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -17,6 +19,15 @@ public class ECRenderLightCreeper extends RenderCreeper {
 
     public ECRenderLightCreeper(RenderManager render) {
         super(render);
+    }
+
+    @Override
+    protected void preRenderCallback(EntityCreeper entity, float partialTickTime) {
+        super.preRenderCallback(entity, partialTickTime);
+
+        GlStateManager.disableLighting();
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
+        GlStateManager.enableLighting();
     }
 
     @Override

@@ -8,8 +8,11 @@ import net.minecraft.client.model.ModelCreeper;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
+@SideOnly(Side.CLIENT)
 public class ECLayerFriendlyCreeperCharge implements LayerRenderer<ECEntityFriendlyCreeper> {
     private static final ResourceLocation CHARGE_TEXTURE = new ResourceLocation(ElementalCreepersRedux.MOD_ID, "textures/entity/friendly_creeper_armor.png");
     private final ECRenderFriendlyCreeper renderer;

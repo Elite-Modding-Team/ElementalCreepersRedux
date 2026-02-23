@@ -1,6 +1,7 @@
 package mod.emt.elementalcreepers.client.render;
 
 import mod.emt.elementalcreepers.ElementalCreepersRedux;
+import mod.emt.elementalcreepers.client.render.layer.ECLayerGlow;
 import mod.emt.elementalcreepers.entity.ECEntityDarkCreeper;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderCreeper;
@@ -13,10 +14,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ECRenderDarkCreeper extends RenderCreeper {
+    private static final ResourceLocation TEXTURE_GLOW = new ResourceLocation(ElementalCreepersRedux.MOD_ID, "textures/entity/dark_creeper_glow.png");
     private static final ResourceLocation TEXTURE = new ResourceLocation(ElementalCreepersRedux.MOD_ID, "textures/entity/dark_creeper.png");
 
     public ECRenderDarkCreeper(RenderManager render) {
         super(render);
+        this.addLayer(new ECLayerGlow<>(this, TEXTURE_GLOW));
     }
 
     @Override
