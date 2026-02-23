@@ -837,6 +837,7 @@ public class ECConfig {
         public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
             if (event.getModID().equals(ElementalCreepersRedux.MOD_ID)) {
                 ConfigManager.sync(ElementalCreepersRedux.MOD_ID, Config.Type.INSTANCE);
+                ECConfigLists.initLists();
             }
         }
     }
