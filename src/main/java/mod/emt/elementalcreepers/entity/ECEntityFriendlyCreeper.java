@@ -39,8 +39,8 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
 
-    private static final float START_HEALTH = 8.0F;
-    private static final float TAME_HEALTH = 40.0F;
+    private static final float START_HEALTH = (float) ECConfig.ENTITIES.FRIENDLY_CREEPER.maxHealth;
+    private static final float TAME_HEALTH = (float) ECConfig.ENTITIES.FRIENDLY_CREEPER.tamedMaxHealth;
     private static final int ANGER_MIN = 400;
     private static final int ANGER_MAX = 780;
     private int lastActiveTime;
@@ -82,7 +82,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.armor);
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.maxHealth);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(START_HEALTH);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(ECConfig.ENTITIES.FRIENDLY_CREEPER.movementSpeed);
     }
 
@@ -327,10 +327,10 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
         super.setTamed(tamed);
 
         if (tamed) {
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue((double) TAME_HEALTH);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(TAME_HEALTH);
             this.setHealth(TAME_HEALTH);
         } else {
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue((double) START_HEALTH);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(START_HEALTH);
         }
     }
 

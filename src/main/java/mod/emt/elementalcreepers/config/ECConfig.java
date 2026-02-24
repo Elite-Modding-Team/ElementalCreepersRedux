@@ -381,6 +381,10 @@ public class ECConfig {
             @Config.Comment("The spawn weight of the Friendly Creeper")
             @Config.RangeInt(min = 0)
             public int spawnWeight = 10;
+
+            @Config.Name("Tamed Max Health")
+            @Config.Comment("The maximum health of the Friendly Creeper when tamed")
+            public double tamedMaxHealth = 50.0;
         }
 
         public static class GhostCreeper {
