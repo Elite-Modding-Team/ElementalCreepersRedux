@@ -5,7 +5,6 @@ import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundCategory;
@@ -14,7 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import org.jetbrains.annotations.NotNull;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -22,66 +22,54 @@ import java.util.Collection;
 import java.util.Map;
 
 public class ECEntityElementalCreeper extends EntityCreeper {
-    protected int lastActiveTime;
-    protected int timeSinceIgnited;
-    protected int fuseTime = 30;
+    // We're ignoring timeSinceIgnited for this
+    private int timeSinceIgnitedCustom;
 
     public ECEntityElementalCreeper(World world) {
         super(world);
     }
 
-    @Override
-    public void fall(float distance, float damageMultiplier) {
-        super.fall(distance, damageMultiplier);
-        this.timeSinceIgnited += (int) (distance * 1.5F);
-        if (this.timeSinceIgnited > this.fuseTime - 5) {
-            this.timeSinceIgnited = this.fuseTime - 5;
-        }
-    }
-
-    @Override
-    public void writeEntityToNBT(@NotNull NBTTagCompound compound) {
-        super.writeEntityToNBT(compound);
-        compound.setShort("Fuse", (short) this.fuseTime);
-    }
-
-    @Override
-    public void readEntityFromNBT(@NotNull NBTTagCompound compound) {
-        super.readEntityFromNBT(compound);
-        if (compound.hasKey("Fuse", 99)) {
-            this.fuseTime = compound.getShort("Fuse");
-        }
-    }
-
+    // Very hacky but it's a way to get around the default explosions
     @Override
     public void onUpdate() {
+        super.onUpdate();
+
+        // Set it to 1 so the original code never fires
+        this.timeSinceIgnited = 1;
         if (this.isEntityAlive()) {
-            this.lastActiveTime = this.timeSinceIgnited;
             if (this.hasIgnited()) {
                 this.setCreeperState(1);
             }
 
-            int i = this.getCreeperState();
-            if (i > 0 && this.timeSinceIgnited == 0) {
+            int state = this.getCreeperState();
+
+            if (state > 0 && this.timeSinceIgnitedCustom == 0) {
                 this.playSound(SoundEvents.ENTITY_CREEPER_PRIMED, 1.0F, 0.5F);
             }
 
-            this.timeSinceIgnited += i;
-            if (this.timeSinceIgnited < 0) {
-                this.timeSinceIgnited = 0;
+            this.lastActiveTime = this.timeSinceIgnitedCustom;
+            this.timeSinceIgnitedCustom += state;
+
+            if (this.timeSinceIgnitedCustom < 0) {
+                this.timeSinceIgnitedCustom = 0;
             }
 
-            if (this.timeSinceIgnited >= this.fuseTime) {
-                this.timeSinceIgnited = this.fuseTime;
+            if (this.timeSinceIgnitedCustom >= this.fuseTime) {
+                this.timeSinceIgnitedCustom = this.fuseTime;
+
                 if (!this.world.isRemote) {
-                    this.dead = true;
-                    this.setDead();
                     this.creeperEffect();
+                    this.setDead();
                 }
             }
         }
+    }
 
-        super.onUpdate();
+    @SideOnly(Side.CLIENT)
+    @Override
+    public float getCreeperFlashIntensity(float partialTicks) {
+        // Override so the new timeSinceIgnitedCustom is utilized
+        return ((float) this.lastActiveTime + (float) (this.timeSinceIgnitedCustom - this.lastActiveTime) * partialTicks) / (float) (this.fuseTime - 2);
     }
 
     protected void creeperEffect() {
