@@ -5,6 +5,7 @@ import mod.emt.elementalcreepers.entity.ai.EntityAIFriendlyCreeperSwell;
 import mod.emt.elementalcreepers.init.ECLootTables;
 import mod.emt.elementalcreepers.init.ECSoundEvents;
 import mod.emt.elementalcreepers.misc.EntityOnlyExplosion;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -27,6 +28,8 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import org.jetbrains.annotations.Nullable;
@@ -35,9 +38,9 @@ import java.util.*;
 
 public class ECEntityFriendlyCreeper extends EntityTameable {
     private static final DataParameter<Integer> REMAINING_ANGER_TIME = EntityDataManager.createKey(ECEntityFriendlyCreeper.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> STATE = EntityDataManager.<Integer>createKey(ECEntityFriendlyCreeper.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> POWERED = EntityDataManager.<Boolean>createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
-    private static final DataParameter<Boolean> IGNITED = EntityDataManager.<Boolean>createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> STATE = EntityDataManager.createKey(ECEntityFriendlyCreeper.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> POWERED = EntityDataManager.createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> IGNITED = EntityDataManager.createKey(ECEntityFriendlyCreeper.class, DataSerializers.BOOLEAN);
 
     private static final float START_HEALTH = (float) ECConfig.ENTITIES.FRIENDLY_CREEPER.maxHealth;
     private static final float TAME_HEALTH = (float) ECConfig.ENTITIES.FRIENDLY_CREEPER.tamedMaxHealth;
@@ -46,8 +49,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     private int lastActiveTime;
     private int timeSinceIgnited;
     private int fuseTime = 30;
-    private int cooldown;
-    private int maxCooldown = 80;
+    public int cooldown;
     private double explosionRadius = ECConfig.ENTITIES.FRIENDLY_CREEPER.explosionRadius;
     private UUID persistentAngerTarget;
 
@@ -166,7 +168,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
 
                 if (this.timeSinceIgnited >= this.fuseTime) {
                     this.timeSinceIgnited = 0;
-                    this.cooldown = this.maxCooldown;
+                    this.cooldown = 80;
                     this.setCreeperState(-1);
                     this.explode();
                 }
@@ -294,6 +296,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
 
         if (!this.world.isRemote) {
             int angerTime = this.dataManager.get(REMAINING_ANGER_TIME);
+
             if (angerTime > 0) {
                 this.dataManager.set(REMAINING_ANGER_TIME, angerTime - 1);
                 if (angerTime - 1 <= 0) {
@@ -314,8 +317,9 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
                 this.aiSit.setSitting(false);
             }
 
-            if (entity instanceof EntityPlayer) {
-                this.navigator.clearPath();
+            if (entity instanceof EntityLivingBase) {
+                this.setPersistentAngerTarget(entity.getUniqueID());
+                this.startPersistentAngerTimer();
             }
 
             return super.attackEntityFrom(source, amount);
@@ -331,6 +335,10 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
             this.setHealth(TAME_HEALTH);
         } else {
             this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(START_HEALTH);
+
+            if (this.getHealth() > START_HEALTH) {
+                this.setHealth(START_HEALTH);
+            }
         }
     }
 
@@ -382,7 +390,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
     }
 
     public void startPersistentAngerTimer() {
-        this.setRemainingPersistentAngerTime(400 + this.rand.nextInt(380));
+        this.setRemainingPersistentAngerTime(ANGER_MIN + this.rand.nextInt(ANGER_MAX - ANGER_MIN));
     }
 
     @Nullable
@@ -469,10 +477,34 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
         return !this.isAngry() && super.canBeLeashedTo(player);
     }
 
-    // TODO: Change spawning to nighttime like other creepers
+    protected boolean isValidLightLevel() {
+        BlockPos blockpos = new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ);
+
+        if (this.world.getLightFor(EnumSkyBlock.SKY, blockpos) > this.rand.nextInt(32)) {
+            return false;
+        } else {
+            int i = this.world.getLightFromNeighbors(blockpos);
+
+            if (this.world.isThundering()) {
+                int j = this.world.getSkylightSubtracted();
+                this.world.setSkylightSubtracted(10);
+                i = this.world.getLightFromNeighbors(blockpos);
+                this.world.setSkylightSubtracted(j);
+            }
+
+            return i <= this.rand.nextInt(8);
+        }
+    }
+
     @Override
     public boolean getCanSpawnHere() {
-        return ECConfig.ENTITIES.FRIENDLY_CREEPER.surfaceSpawning ? super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this)) : super.getCanSpawnHere();
+        IBlockState state = this.world.getBlockState((new BlockPos(this)).down());
+
+        return ECConfig.ENTITIES.FRIENDLY_CREEPER.surfaceSpawning ?
+                this.world.getDifficulty() != EnumDifficulty.PEACEFUL && this.world.canSeeSky(new BlockPos(this)) && this.isValidLightLevel()
+                        && this.getBlockPathWeight(new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ)) >= 0.0F && state.canEntitySpawn(this) :
+                this.world.getDifficulty() != EnumDifficulty.PEACEFUL && this.isValidLightLevel()
+                        && this.getBlockPathWeight(new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ)) >= 0.0F && state.canEntitySpawn(this);
     }
 
     @Nullable
