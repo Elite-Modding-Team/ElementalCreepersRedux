@@ -14,12 +14,14 @@ Tired of Survival being too boring? Do you want your game to have more mobs that
 
 The recognizable cast of creepers since the original Elemental Creepers mod!
 
+You can befriend Friendly Creepers with gunpowder! Right-click on tamed Friendly Creepers with an empty hand to make them sit or use gunpowder to heal them. You can also use gunpowder to breed them for baby variants.
+
 - **Cookie Creeper:** Entirely made out of cookies! It won't harm you when it explodes but you'll be provided a few cookies.
 - **Dark Creeper:** Hates anyone lighting up dark areas, be sure not to let it explode near light sources or it will destroy them. Otherwise its explosion is harmless.
 - **Earth Creeper:** Hates tunnels and large caves, it will explode into a large pile of dirt.
 - **Electric Creeper:** It will conduct lightning on all mobs around it when it explodes. Watch out if there's other creepers nearby!
 - **Fire Creeper:** Hates forests, and spreads fire everywhere after exploding. 
-- **Friendly Creeper:** Likes to be left alone rather than engage in conflict like the rest of its brethren, it also has the ability to explode without dying or destroying terrain. You can tame these creepers using gunpowder to befriend them! Right-click on tamed Friendly Creepers with an empty hand to make them sit.
+- **Friendly Creeper:** Likes to be left alone rather than engage in conflict like the rest of its brethren, it also has the ability to explode without dying or destroying terrain.
 - **Ghost Creeper:** Vengeful and back from the dead. These spirits don't destroy terrain from their explosions but will still a large amount of damage.
 - **Illusion Creeper:** Sneaky, and splits up to five. Which one of them is real?
 - **Light Creeper:** This creeper is obsessed with glowstone and explodes into a pile of it! Be sure not to let it trap you if you want to collect all that glowstone.
@@ -42,7 +44,7 @@ The recognizable cast of creepers since the original Elemental Creepers mod!
 
 Extra features that make this port a little more unique.
 
-- Fading animation for Ghost Creepers
+- Extra sounds and details like a fading animation for Ghost Creepers
 - Many config options to adjust attributes, adjust spawning conditions, and even turn off creepers you don't want
 - Quality of life, with some adjustments to balancing for Survival, and additional drops to make them a little more rewarding
 - The classic explosion sound from Beta as a config option for most creepers
