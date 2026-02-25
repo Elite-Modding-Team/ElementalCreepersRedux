@@ -8,8 +8,6 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = MOD_ID, name = NAME, version = VERSION, acceptedMinecraftVersions = ACCEPTED_VERSIONS)
 public class ElementalCreepersRedux {
@@ -24,19 +22,8 @@ public class ElementalCreepersRedux {
     public static ElementalCreepersRedux instance;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        LOGGER.info(NAME + " pre-initialized");
-    }
-
-    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         LOGGER.info(NAME + " initialized");
-
         ECConfigLists.initLists();
-    }
-
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        LOGGER.info(NAME + " post-initialized");
     }
 }
