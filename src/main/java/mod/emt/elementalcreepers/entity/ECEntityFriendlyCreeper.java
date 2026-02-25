@@ -32,6 +32,7 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -351,10 +352,17 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
         }
 
         if (this.isTamed()) {
-            if (stack.getItem() == Items.GUNPOWDER && this.getHealth() < this.getMaxHealth()) {
-                this.heal(10.0F);
-                if (!player.capabilities.isCreativeMode) stack.shrink(1);
-                return true;
+            if (stack.getItem() == Items.GUNPOWDER) {
+                if (this.getHealth() < this.getMaxHealth()) {
+                    this.heal(10.0F);
+                    if (!player.capabilities.isCreativeMode) stack.shrink(1);
+                    this.world.setEntityState(this, (byte) 7);
+                    return true;
+                } else if (this.getGrowingAge() == 0 && !this.isInLove()) {
+                    this.setInLove(player);
+                    if (!player.capabilities.isCreativeMode) stack.shrink(1);
+                    return true;
+                }
             }
 
             if (this.isOwner(player)) {
@@ -366,8 +374,7 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
             }
         } else if (stack.getItem() == Items.GUNPOWDER && !this.isAngry()) {
             if (!player.capabilities.isCreativeMode) stack.shrink(1);
-
-            if (this.rand.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, player)) {
+            if (this.rand.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.setTamedBy(player);
                 this.navigator.clearPath();
                 this.aiSit.setSitting(true);

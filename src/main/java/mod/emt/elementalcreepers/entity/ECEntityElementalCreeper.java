@@ -9,7 +9,6 @@ import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -105,19 +104,18 @@ public class ECEntityElementalCreeper extends EntityCreeper {
 
         if (!this.world.isRemote) {
             this.world.playSound(null, x, y, z, soundEvent, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
-        }
 
+            if (this.world instanceof WorldServer) {
+                WorldServer worldServer = (WorldServer) this.world;
 
-        if (!this.world.isRemote && this.world instanceof WorldServer) {
-            WorldServer worldServer = (WorldServer) this.world;
-            SPacketExplosion packet = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<>(), null);
-
-            for (EntityPlayerMP player : worldServer.getPlayers(EntityPlayerMP.class, p -> p.getDistanceSq(x, y, z) < 4096.0D)) {
-                if (hitPlayers != null && hitPlayers.containsKey(player)) {
-                    SPacketExplosion playerPacket = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<BlockPos>(), hitPlayers.get(player));
-                    player.connection.sendPacket(playerPacket);
-                } else {
-                    player.connection.sendPacket(packet);
+                SPacketExplosion packet = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<>(), null);
+                for (EntityPlayerMP player : worldServer.getPlayers(EntityPlayerMP.class, p -> p.getDistanceSq(x, y, z) < 4096.0D)) {
+                    if (hitPlayers != null && hitPlayers.containsKey(player)) {
+                        SPacketExplosion playerPacket = new SPacketExplosion(x, y, z, (float) radius, new ArrayList<>(), hitPlayers.get(player));
+                        player.connection.sendPacket(playerPacket);
+                    } else {
+                        player.connection.sendPacket(packet);
+                    }
                 }
             }
         }
