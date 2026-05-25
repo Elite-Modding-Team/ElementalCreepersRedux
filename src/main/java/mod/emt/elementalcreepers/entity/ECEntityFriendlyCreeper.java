@@ -514,6 +514,11 @@ public class ECEntityFriendlyCreeper extends EntityTameable {
                         && this.getBlockPathWeight(new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ)) >= 0.0F && state.canEntitySpawn(this);
     }
 
+    @Override
+    protected boolean canDespawn() {
+        return !this.isTamed();
+    }
+
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {
