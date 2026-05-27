@@ -81,7 +81,7 @@ Be sure to also disable other spawn conditions as well, such as `Surface Spawnin
 
 ## 🌐 Translators
 
-- None yet!
+- Spanish ~ Hidden_Shapeshifter
 
 ---
 
